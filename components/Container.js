@@ -10,13 +10,8 @@ const Container = (props) => {
       </Head>
 
       <Navigation />
-      <Flex
-        height="100vh"
-       /*  alignItems="center" */
-        justifyContent={"center"}
-        bg="gray.200"
-      >
-        <div>{props.children}</div>
+      <Flex vW="100vW"  vH= '100vH' justifyContent={"center"} bg="gray.200">
+        <Box w={['80vW', '80vW', '50vW']} >{props.children}</Box>
       </Flex>
     </div>
   );

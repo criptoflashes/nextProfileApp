@@ -14,7 +14,6 @@ const Index = (props) => {
         <title>MM-Home</title>
       </Head>
 
-      <h1>Index</h1>
       <Users users={props.users}/>
     </Container>
   );
@@ -22,10 +21,10 @@ const Index = (props) => {
   }
 
 Index.getInitialProps  = async (ctx) => {
-const res = await fetch('https://jsonplaceholder.typicode.com/users?10')
-const data = await res.json()
-console.log(data)
-return {users: data}
+const res = await fetch('https://reqres.in/api/users')
+const resJSON = await res.json()
+console.log(res)
+return {users: resJSON.data}
 }
 
 export default Index;
