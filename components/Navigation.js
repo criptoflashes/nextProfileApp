@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import ToggleColorMode from "./ToggleColorMode";
 import {
   Box,
   Flex,
@@ -34,8 +34,11 @@ function Navigation() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
+
+    
     <Center>
       <Box mx="1rem" w="100%">
+      
         <Flex
           bg={useColorModeValue("brand.100", "gray.800")}
           color={useColorModeValue("gray.600", "white")}
@@ -47,6 +50,7 @@ function Navigation() {
           borderColor={useColorModeValue("gray.200", "gray.900")}
           align={"center"}
         >
+          <ToggleColorMode/>
           <Flex
             flex={{ base: 1, md: "auto" }}
             ml={{ base: -2 }}

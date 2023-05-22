@@ -1,5 +1,5 @@
 import Router  from "next/router";
-import { Text, Box, Flex, Spacer, Image, Stack } from "@chakra-ui/react";
+import { Text, Box, Flex, Spacer, Image, Stack, useColorModeValue } from "@chakra-ui/react";
 
 const Users = (props) => {
   return (
@@ -10,7 +10,7 @@ const Users = (props) => {
            
             key={u.id}
             justifyContent={"space-around"}
-            bg="white"
+            bg={useColorModeValue('white', 'gray.800')} 
             my="1rem"
             py='1rem'
             alignItems={"center"}
