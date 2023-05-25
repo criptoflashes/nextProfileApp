@@ -7,8 +7,8 @@ const ToggleColorMode = () => {
 const{colorMode, toggleColorMode  } = useColorMode()
 
     return(
-  <Box>
-        <Button onClick = { () => toggleColorMode() }>
+  <Box w={7} h={8} mt='1rem' mr='2rem' >
+        <Button onClick = { () => toggleColorMode() }  >
             {colorMode === 'dark'? <SunIcon/> : <MoonIcon/>}
             </Button>
 {/*             <Box  bg={useColorModeValue('white', 'gray.800')} >

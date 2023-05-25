@@ -10,6 +10,7 @@ const About = () => {
       <Container>
        <Head>
         <title>MM-About</title>
+        
       </Head>
       <Text>About</Text>
       </Container>

@@ -43,17 +43,18 @@ function Navigation() {
           bg={useColorModeValue("brand.100", "gray.800")}
           color={useColorModeValue("gray.600", "white")}
           minH={"60px"}
-          py={{ base: 2 }}
+          py={{ base: 5 }}
           px={{ base: 1 }}
           borderBottom={1}
           borderStyle={"solid"}
           borderColor={useColorModeValue("gray.200", "gray.900")}
           align={"center"}
         >
-          <ToggleColorMode/>
+          
+        
           <Flex
             flex={{ base: 1, md: "auto" }}
-            ml={{ base: -2 }}
+            ml={{ base:8 }}
             display={{ base: "flex", md: "none" }}
           >
             <IconButton
@@ -62,31 +63,42 @@ function Navigation() {
                 isOpen ? (
                   <CloseIcon w={3} h={3} />
                 ) : (
-                  <HamburgerIcon w={5} h={5} />
+                  <HamburgerIcon w={7} h={8} />
                 )
               }
-              variant={"ghost"}
+              variant={"solid"}
               aria-label={"Toggle Navigation"}
             />
           </Flex>
           <Flex flex={{ base: 1 }} justify={{ base: "center", md: "center" }}>
-            <Link href="/home">
-              <Box boxSize="75px">
-                {/* <Image src={logo1} mr={12}></Image> */}
-              </Box>
-            </Link>
 
+          {/* Logo */}
+         {/*    <Link href="/home">
+              <Box boxSize="75px" mr={'3rem'}> */}
+                {/* <Image src={logo1} mr={12}></Image> */}
+{/*               </Box>
+            </Link>  */}
+
+   
+           
             <Stack
               display={{ base: "none", md: "flex" }}
               justify={{ base: "center", md: "center" }}
               bg="brand.100"
               boxShadow="md"
               px="4rem"
-              mx="2rem"
+              mx="8rem"
               w="100%"
+              h='5rem'
             >
-              <DesktopNav />
+              <DesktopNav  />
             </Stack>
+
+            {/* Color mode button */}
+           
+            <ToggleColorMode />
+           
+
           </Flex>
 
           {/*                 <Stack
@@ -155,7 +167,7 @@ const DesktopNav = () => {
                   </Button>
                 </Link>
               </PopoverTrigger>
-
+       
               {/*                         {navItem.children && (
                             <PopoverContent
                                 border={0}

@@ -14,7 +14,6 @@ const Index = (props) => {
       <Head>
         <title>MM-Home</title>
       </Head>
-      {/* <ToggleColorMode/> */}
       <Users users={props.users}/>
      
     </Container>
