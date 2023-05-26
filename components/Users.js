@@ -27,7 +27,7 @@ const Users = (props) => {
             alignItems={"center"}
             boxShadow={'2xl'}
             _hover={{
-              /* bg: 'green.500', */
+                cursor: 'pointer',
               animation: animation,
             }}
             onClick={(e) => Router.push("/users/[id]", `/users/${u.id}`)}
