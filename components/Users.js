@@ -1,23 +1,39 @@
-import Router  from "next/router";
-import { Text, Box, Flex, Spacer, Image, Stack, useColorModeValue } from "@chakra-ui/react";
+import Router from "next/router";
+import {
+  Text,
+  Box,
+  Flex,
+  Spacer,
+  Image,
+  Stack,
+  useColorModeValue,
+} from "@chakra-ui/react";
+import { useAnimation } from "@codechem/chakra-ui-animations";
 
 const Users = (props) => {
+  const animation = useAnimation("pulse", { duration: 500, iterationCount: 1 });
+
   return (
-    <Box  bg="red.200" >
+    <Box bg="red.200">
       {props.users.map((u) => {
         return (
-          <Stack direction={['column', 'row']} 
-           
+          <Stack
+            direction={["column", "row"]}
             key={u.id}
             justifyContent={"space-around"}
-            bg={useColorModeValue('white', 'gray.800')} 
+            bg={useColorModeValue("white", "gray.800")}
             my="1rem"
-            py='1rem'
+            py="2rem"
             alignItems={"center"}
-            onClick={e => Router.push ('/users/[id]', `/users/${u.id}`)}
+            boxShadow={'2xl'}
+            _hover={{
+              /* bg: 'green.500', */
+              animation: animation,
+            }}
+            onClick={(e) => Router.push("/users/[id]", `/users/${u.id}`)}
           >
-            <Box textAlign={"center"} px='1rem'>
-              <Text >
+            <Box textAlign={"center"} px="1rem">
+              <Text>
                 Name: {u.first_name} {u.last_name}
               </Text>
               <Text>Email: {u.email}</Text>
@@ -28,7 +44,7 @@ const Users = (props) => {
               alt={u.first_name + u.last_name}
               borderRadius="full"
               boxSize="100px"
-              mx='1rem'
+              mx="1rem"
             />
           </Stack>
         );
